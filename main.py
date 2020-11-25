@@ -11,9 +11,11 @@ my_firestore = FirestoreInteractor(cred)
 my_excel = ExcelInteractor('./sample_data/sample_product_list.xlsx')
 productList = my_excel.test()
 
-print(productList[0].__dict__)
+for product in productList:
+  print(u'Creating product {}'.format(product.n))
+  my_firestore.add_data(u'products', product)
 
-# myfsinteractor.add_data(u'products', dummy_product)
+# my_firestore.delete_collection(u'products', 100)
 
 #.add_data(dummy_product)
 # app = firebase_admin.initialize_app(cred)
