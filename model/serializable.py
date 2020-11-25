@@ -1,0 +1,2 @@
+class Serializable:
+  pass
